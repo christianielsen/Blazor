@@ -1,0 +1,40 @@
+@page "/bindprop"
+@using LearnBlazor.Models
+
+<h3>BindProp</h3>
+
+<button type="button" @onclick="() => product.IsActive = !product.IsActive">
+    @if (!product.IsActive)
+    {
+        <span>
+            Activate product
+        </span>
+    }
+    else
+    {
+        <span>
+            Deactivate product
+        </span>
+    }
+</button>
+
+@if (product.IsActive)
+{
+    <span>@product.Id</span>
+    <span>@product.Name</span>
+    <span>@product.IsActive</span>
+    <span>@product.Price</span>
+    <input @bind="product.Price" @bind:event="oninput" type="number"/>
+}
+
+@code {
+
+    Product product = new()
+    {
+        Id = 1,
+        Name = "Test",
+        IsActive = false,
+        Price = 5.00
+    };
+
+}
