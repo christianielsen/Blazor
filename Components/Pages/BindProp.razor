@@ -1,42 +1,53 @@
 @page "/bindprop"
 @using LearnBlazor.Models
 
-<h3>BindProp</h3>
+<div style="display: flex; flex-direction: column">
+    <h3>BindProp</h3>
 
-<button type="button" @onclick="() => product.IsActive = !product.IsActive">
-    @if (!product.IsActive)
-    {
-        <span>
+    <button type="button" @onclick="() => _product.IsActive = !_product.IsActive">
+        @if (!_product.IsActive)
+        {
+            <span>
             Activate product
         </span>
-    }
-    else
-    {
-        <span>
+        }
+        else
+        {
+            <span>
             Deactivate product
         </span>
-    }
-</button>
-
-@if (product.IsActive)
-{
-    <span>@product.Id</span>
-    <span>@product.Name</span>
-    <span>@product.IsActive</span>
-    <span>@product.Price</span>
-    <input @bind="product.Price" @bind:event="oninput" type="number"/>
-
-    <select>
-        @foreach (var prop in product.Properties)
-        {
-            <option value="@prop.Key">@prop.Value</option>
         }
-    </select>
-}
+    </button>
+
+    @if (_product.IsActive)
+    {
+        <span>Id: @_product.Id</span>
+        <span>Name: @_product.Name</span>
+        <span>IsActive: @_product.IsActive</span>
+        <span>Price: @_product.Price</span>
+        <input @bind="_product.Price" @bind:event="oninput" type="number"/>
+
+        <h4>Product properties</h4>
+        <select @bind="_selectedProperty">
+            @foreach (var prop in _product.Properties)
+            {
+                <option value="@prop.Key">@prop.Value</option>
+            }
+        </select>
+
+        <span>Selected Prop: @_selectedProperty</span>
+        @if (!string.IsNullOrEmpty(_selectedProperty))
+        {
+            <span>Selected Value: @_product.Properties.FirstOrDefault(p => p.Key == _selectedProperty).Value</span>
+        }
+    }
+</div>
 
 @code {
 
-    Product product = new()
+    private string _selectedProperty = "";
+
+    Product _product = new()
     {
         Id = 1,
         Name = "Test",
