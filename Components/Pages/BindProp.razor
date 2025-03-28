@@ -25,6 +25,13 @@
     <span>@product.IsActive</span>
     <span>@product.Price</span>
     <input @bind="product.Price" @bind:event="oninput" type="number"/>
+
+    <select>
+        @foreach (var prop in product.Properties)
+        {
+            <option value="@prop.Key">@prop.Value</option>
+        }
+    </select>
 }
 
 @code {
@@ -34,7 +41,13 @@
         Id = 1,
         Name = "Test",
         IsActive = false,
-        Price = 5.00
+        Price = 5.00,
+        Properties = new List<ProductProperty>
+        {
+            new() { Id = 1, Key = "Color", Value = "Red" },
+            new() { Id = 2, Key = "Size", Value = "20oz" },
+            new() { Id = 3, Key = "Flavour", Value = "Rose" }
+        }
     };
 
 }
