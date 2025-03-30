@@ -2,8 +2,63 @@
 
 <h3>Products</h3>
 
+<div class="p-2 mt-2">
+    <div class="row">
+        @foreach (var product in _products)
+        {
+            <div class="bg-light border col-6">
+                <h4 class="text-secondary">@product.Name</h4>
+                <label for="is-active">Active?</label>
+                <input id="is-active" type="checkbox" @bind="@product.IsActive" disabled/>
+                <p @onmouseover="() => ShowProperties(product.Id)"
+                   @onmouseout="() => HideProperties(product.Id)">Show properties</p>
+                @if (VisibleProductId == product.Id)
+                {
+                    <div class="bg-body rounded border border-2 p-2 m-2">
+                        @foreach (var property in product.Properties)
+                        {
+                            <p>@property.Key - @property.Value</p>
+                        }
+                    </div>
+                }
+                
+                <button type="button" class="btn btn-danger" @onclick="() => DeleteProduct(product.Id)">Delete</button>
+            </div>
+        }
+        
+        @if (_products.Count <= 0)
+        {
+            <h4>No products found</h4>
+        }
+    </div>
+</div>
+
 @code {
-    Product[] _products = new[]
+    private int? VisibleProductId { get; set; } = null;
+
+    private void ShowProperties(int productId)
+    {
+        VisibleProductId = productId;
+    }
+
+    private void HideProperties(int productId)
+    {
+        if (VisibleProductId == productId)
+        {
+            VisibleProductId = null;
+        }
+    }
+
+    private void DeleteProduct(int productId)
+    {
+        var product = _products.FirstOrDefault(p => p.Id == productId);
+        if (product != null)
+        {
+            _products.Remove(product);
+        }
+    }
+
+    List<Product> _products = new()
     {
         new Product()
         {
@@ -30,4 +85,5 @@
             }
         }
     };
+
 }
