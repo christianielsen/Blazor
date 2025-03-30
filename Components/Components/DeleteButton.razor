@@ -1,0 +1,7 @@
+<button class="btn btn-danger mt-2" @onclick="HandleClick">Delete</button>
+
+@code {
+    [Parameter] public EventCallback OnDelete { get; set; }
+
+    private void HandleClick() => OnDelete.InvokeAsync();
+}

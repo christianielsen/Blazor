@@ -1,0 +1,35 @@
+<div class="bg-light border col-6">
+    <h4 class="text-secondary">@Product.Name</h4>
+    <label for="is-active">Active?</label>
+    <input id="is-active" type="checkbox" @bind="@Product.IsActive" disabled/>
+    <p @onmouseover="Show"
+       @onmouseout="Hide">Show properties</p>
+    @if (ShowProperties)
+    {
+        <div class="bg-body rounded border border-2 p-2 m-2">
+            @foreach (var property in Product.Properties)
+            {
+                <p>@property.Key - @property.Value</p>
+            }
+        </div>
+    }
+    <DeleteButton OnDelete="async () => await OnDelete.InvokeAsync(Product.Id)"/>
+</div>
+
+@code {
+    [Parameter] public required Product Product { get; set; }
+    [Parameter] public EventCallback<int> OnDelete { get; set; }
+
+    private bool ShowProperties { get; set; }
+
+    private void Show()
+    {
+        ShowProperties = true;
+    }
+
+    private void Hide()
+    {
+        ShowProperties = false;
+    }
+
+}
