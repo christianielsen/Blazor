@@ -1,8 +1,15 @@
 @page "/routing"
+@page "/routing/{Param1:int}"
+@page "/routing/{Param1:int}/{Param2}"
 @page "/multi/routing"
 
 <h3>Routing</h3>
 
+<p>Param1: @Param1</p>
+<p>Param2: @Param2</p>
+
 @code {
-    
+    [Parameter] public int Param1 { get; set; }
+    [Parameter] public string Param2 { get; set; } = "";
+
 }
