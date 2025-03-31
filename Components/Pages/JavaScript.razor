@@ -7,6 +7,10 @@
 <div class="row">
     <button class="btn btn-secondary" @onclick="TestConfirmBox">Test Confirm Button</button>
     <p>ConfirmResult: @Result</p>
+    
+    <button class="btn btn-success" @onclick="ShowAlertSuccess">Show success</button>
+    <button class="btn btn-danger" @onclick="ShowAlertError">Show error</button>
+
 </div>
 
 @code {
@@ -16,6 +20,16 @@
     private async Task TestConfirmBox()
     {
         Result = await _JSRuntime.InvokeAsync<bool>("confirm", _confirmMessage);
+    }
+
+    private async Task ShowAlertSuccess()
+    {
+        await _JSRuntime.InvokeVoidAsync("showSwal", "success", "message");
+    }
+
+    private async Task ShowAlertError()
+    {
+        await _JSRuntime.InvokeVoidAsync("showSwal", "error", "message");
     }
 
 }
