@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnBlazor", "LearnBlazor.csproj", "{544E07E4-E7FE-41CE-B0C4-92B55BA40F9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnBlazor", "LearnBlazor\LearnBlazor.csproj", "{369DA77D-4438-4DA2-9FE5-250BE1372DF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnBlazorSSR", "LearnBlazorSSR\LearnBlazorSSR.csproj", "{6E2B9405-5E50-4515-959A-71E950FF84DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +10,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{544E07E4-E7FE-41CE-B0C4-92B55BA40F9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{544E07E4-E7FE-41CE-B0C4-92B55BA40F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{544E07E4-E7FE-41CE-B0C4-92B55BA40F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{544E07E4-E7FE-41CE-B0C4-92B55BA40F9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{369DA77D-4438-4DA2-9FE5-250BE1372DF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{369DA77D-4438-4DA2-9FE5-250BE1372DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{369DA77D-4438-4DA2-9FE5-250BE1372DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{369DA77D-4438-4DA2-9FE5-250BE1372DF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E2B9405-5E50-4515-959A-71E950FF84DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E2B9405-5E50-4515-959A-71E950FF84DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E2B9405-5E50-4515-959A-71E950FF84DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E2B9405-5E50-4515-959A-71E950FF84DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal
