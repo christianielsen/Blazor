@@ -1,8 +1,10 @@
 @page "/routing"
 @page "/routing/catch-all/{*PageParameters}"
-@page "/routing/{Param1:int}"
-@page "/routing/{Param1:int}/{Param2}"
+@page "/routing/{Param1}"
+@page "/routing/{Param1}/{Param2}"
 @page "/multi/routing"
+
+@inject NavigationManager _NavigationManager;
 
 <h3>Routing</h3>
 
@@ -10,8 +12,24 @@
 <p>Param2: @Param2</p>
 <p>All params: @PageParameters</p>
 
+<button type="button" class="btn btn-primary" @onclick="Navigate">Navigate to query parameter</button>
+<button type="button" class="btn btn-primary" @onclick="LoadParameters">Load Parameters</button>
+
 @code {
-    [Parameter] public int Param1 { get; set; }
+    [Parameter] public string Param1 { get; set; }
     [Parameter] public string Param2 { get; set; } = "";
     [Parameter] public string PageParameters { get; set; } = "";
+
+    private void LoadParameters()
+    {
+        var uri = new Uri(_NavigationManager.Uri);
+        var query = QueryHelpers.ParseQuery(uri.Query);
+        Param1 = query["Param1"];
+        Param2 = query["Param2"];
+    }
+
+    private void Navigate()
+    {
+        _NavigationManager.NavigateTo("routing?Param1=test&Param2=test2");
+    }
 }
