@@ -1,7 +1,79 @@
 @page "/forms"
 
-<h3>Forms</h3>
+<div class="col-12 offset-md-2 col-md-8 border">
+    <div class="text-center pt-4">
+        <h2>Product Form</h2>
+    </div>
+    <div class="mx-2 px-2">
+        <EditForm FormName="ProductCreate" Model="Product" OnValidSubmit="CreateProduct">
+            <DataAnnotationsValidator/>
+            <div class="form-group py-2">
+                Product Name
+                <InputText class="form-control" @bind-Value="@Product.Name"/>
+                <ValidationMessage For="@(() => Product.Name)"/>
+            </div>
+            <div class="form-group py-2">
+                Price
+                <InputNumber class="form-control" @bind-Value="@Product.Price"/>
+                <ValidationMessage For="@(() => Product.Price)"/>
+            </div>
+            <div class="form-group py-2">
+                Category
+                <InputSelect class="form-select" @bind-Value="@Product.Category">
+                    @foreach (var category in Enum.GetValues(typeof(Category)))
+                    {
+                        <option value="@category">@category</option>
+                    }
+                </InputSelect>
+            </div>
+            <div class="form-group py-2">
+                IsActive
+                <InputCheckbox @bind-Value="@Product.IsActive"/>
+            </div>
+            <div class="form-group py-2">
+                Available After
+                <InputDate class="form-control" @bind-Value="@Product.AvailableAfter"/>
+            </div>
+
+            <button type="submit" class="btn btn-primary my-3">Create Product</button>
+            <p class="text-success">@(_isLoading ? "Loading..." : "")</p>
+        </EditForm>
+    </div>
+    
+    @if (CreatedProduct != null)
+    {
+        <div class="mx-2 pt-4">
+            <h2 class="text-success">Product Created</h2>
+            <div class="px-4">
+                Name: @CreatedProduct.Name
+                Price: @CreatedProduct.Price
+                Category: @CreatedProduct.Category
+                IsActive: @CreatedProduct.IsActive
+                Available After: @CreatedProduct.AvailableAfter
+            </div>
+        </div>
+    }
+</div>
 
 @code {
+    [SupplyParameterFromForm]
+    public Product Product { get; set; } = new Product();
     
+    private Product? CreatedProduct { get; set; }
+    
+    private bool _isLoading = false;
+
+    private async Task CreateProduct()
+    {
+        _isLoading = true;
+        
+        //Simulate db changes delay
+        await Task.Delay(3000);
+        
+        CreatedProduct = Product;
+        Product = new Product();
+
+        _isLoading = false;
+    }
+
 }
