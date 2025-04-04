@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnBlazor", "LearnBlazor\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnBlazorSSR", "LearnBlazorSSR\LearnBlazorSSR.csproj", "{6E2B9405-5E50-4515-959A-71E950FF84DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnBlazorProject", "LearnBlazorProject\LearnBlazorProject.csproj", "{1305A836-44CB-48E0-A3A2-71990B5D50BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +20,10 @@ Global
 		{6E2B9405-5E50-4515-959A-71E950FF84DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E2B9405-5E50-4515-959A-71E950FF84DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E2B9405-5E50-4515-959A-71E950FF84DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1305A836-44CB-48E0-A3A2-71990B5D50BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1305A836-44CB-48E0-A3A2-71990B5D50BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1305A836-44CB-48E0-A3A2-71990B5D50BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1305A836-44CB-48E0-A3A2-71990B5D50BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
