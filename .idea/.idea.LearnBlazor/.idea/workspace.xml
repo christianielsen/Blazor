@@ -13,10 +13,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a4fad0c-4778-4193-83d9-31c4b90268c5" name="Changes" comment="Created categories table">
-      <change afterPath="$PROJECT_DIR$/LearnBlazorProject/Repository/CategoryRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LearnBlazorProject/Repository/IRepository/ICategoryRepository.cs" afterDir="false" />
+    <list default="true" id="2a4fad0c-4778-4193-83d9-31c4b90268c5" name="Changes" comment="Created category repository">
+      <change afterPath="$PROJECT_DIR$/LearnBlazorProject/Components/Pages/Category/CategoryList.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LearnBlazor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LearnBlazor/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LearnBlazorProject/Components/Layout/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/LearnBlazorProject/Components/Layout/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LearnBlazorProject/Components/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/LearnBlazorProject/Components/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LearnBlazorProject/LearnBlazorProject.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LearnBlazorProject/LearnBlazorProject.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LearnBlazorProject/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LearnBlazorProject/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +52,9 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Users/christiannielsen/Code/LearnBlazor/LearnBlazorProject/Data/Migrations/ApplicationDbContextModelSnapshot.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/christiannielsen/Code/LearnBlazor/LearnBlazorProject/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/christiannielsen/Code/LearnBlazor/LearnBlazorProject/appsettings.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/christiannielsen/Code/LearnBlazor/LearnBlazorProject/appsettings.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/christiannielsen/Code/LearnBlazor/LearnBlazorProject/appsettings.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/christiannielsen/Code/LearnBlazor/LearnBlazorProject/appsettings.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/christiannielsen/Code/LearnBlazor/LearnBlazorProject/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/christiannielsen/Code/LearnBlazor/LearnBlazorProject/Components/Layout/NavMenu.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/christiannielsen/Code/LearnBlazor/LearnBlazorProject/Data/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/christiannielsen/Code/LearnBlazor/LearnBlazorProject/Data/ApplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -238,7 +237,7 @@
       <workItem from="1743433910300" duration="9433000" />
       <workItem from="1743461053607" duration="5714000" />
       <workItem from="1743800838350" duration="4645000" />
-      <workItem from="1743973503409" duration="713000" />
+      <workItem from="1743973503409" duration="2044000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -448,7 +447,23 @@
       <option name="project" value="LOCAL" />
       <updated>1743973849536</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Created categories table">
+      <option name="closed" value="true" />
+      <created>1743974509726</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1743974509726</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Created category repository">
+      <option name="closed" value="true" />
+      <created>1743974522165</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1743974522165</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,7 +473,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Model binding" />
     <MESSAGE value="Added dynamic selects" />
     <MESSAGE value="Hold selected property in var" />
     <MESSAGE value="Add models dir to global usings" />
@@ -483,6 +497,7 @@
     <MESSAGE value="Init final project" />
     <MESSAGE value="Connect project to postgres db" />
     <MESSAGE value="Created categories table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created categories table" />
+    <MESSAGE value="Created category repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created category repository" />
   </component>
 </project>
