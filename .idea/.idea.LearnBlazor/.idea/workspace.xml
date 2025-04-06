@@ -13,7 +13,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a4fad0c-4778-4193-83d9-31c4b90268c5" name="Changes" comment="">
+    <list default="true" id="2a4fad0c-4778-4193-83d9-31c4b90268c5" name="Changes" comment="Created categories table">
+      <change afterPath="$PROJECT_DIR$/LearnBlazorProject/Repository/CategoryRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LearnBlazorProject/Repository/IRepository/ICategoryRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LearnBlazor/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LearnBlazor/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -236,6 +238,7 @@
       <workItem from="1743433910300" duration="9433000" />
       <workItem from="1743461053607" duration="5714000" />
       <workItem from="1743800838350" duration="4645000" />
+      <workItem from="1743973503409" duration="713000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -437,7 +440,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743804992252</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Created categories table">
+      <option name="closed" value="true" />
+      <created>1743973849536</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1743973849536</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +458,6 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Initial commit" />
     <MESSAGE value="Model binding" />
     <MESSAGE value="Added dynamic selects" />
     <MESSAGE value="Hold selected property in var" />
@@ -472,6 +482,7 @@
     <MESSAGE value="Forms in blazor" />
     <MESSAGE value="Init final project" />
     <MESSAGE value="Connect project to postgres db" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connect project to postgres db" />
+    <MESSAGE value="Created categories table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created categories table" />
   </component>
 </project>
