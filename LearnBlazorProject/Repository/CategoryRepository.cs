@@ -1,5 +1,6 @@
 using LearnBlazorProject.Data;
 using LearnBlazorProject.Repository.IRepository;
+using Microsoft.EntityFrameworkCore;
 
 namespace LearnBlazorProject.Repository;
 
@@ -12,42 +13,42 @@ public class CategoryRepository : ICategoryRepository
         _context = context;
     }
 
-    public Category Create(Category category)
+    public async Task<Category> CreateAsync(Category category)
     {
-        _context.Add(category);
-        _context.SaveChanges();
+        await _context.AddAsync(category);
+        await _context.SaveChangesAsync();
         return category;
     }
 
-    public Category Update(Category category)
+    public async Task<Category> UpdateAsync(Category category)
     {
-        var categoryToUpdate = _context.Categories.SingleOrDefault(x => x.Id == category.Id);
+        var categoryToUpdate = await _context.Categories.FirstOrDefaultAsync(x => x.Id == category.Id);
         if (categoryToUpdate != null)
         {
             categoryToUpdate.Name = category.Name;
             _context.Categories.Update(categoryToUpdate);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return categoryToUpdate;
         }
 
         return category;
-    } 
+    }
 
-    public bool Delete(int id)
+    public async Task<bool> DeleteAsync(int id)
     {
-        var category = _context.Categories.FirstOrDefault(x => x.Id == id);
+        var category = await _context.Categories.FirstOrDefaultAsync(x => x.Id == id);
         if (category != null)
         {
             _context.Categories.Remove(category);
-            return _context.SaveChanges() > 0;
+            return await _context.SaveChangesAsync() > 0;
         }
 
         return false;
     }
 
-    public Category Get(int id)
+    public async Task<Category> GetAsync(int id)
     {
-        var category = _context.Categories.FirstOrDefault(x => x.Id == id);
+        var category = await _context.Categories.FirstOrDefaultAsync(x => x.Id == id);
         if (category != null)
         {
             return category;
@@ -56,8 +57,8 @@ public class CategoryRepository : ICategoryRepository
         return new Category();
     }
 
-    public IEnumerable<Category> GetAll()
+    public async Task<IEnumerable<Category>> GetAllAsync()
     {
-        return _context.Categories.ToList();
+        return await _context.Categories.ToListAsync();
     }
 }
